@@ -11,7 +11,7 @@ export default function Home() {
         speed={1.1}
         sentence="The beautiful landscape stretched out before us, filled with rolling hills, lush trees, and vibrant wildflowers swaying in the gentle breeze under a clear blue sky."
       />
-      <div className="w-ful h-screen"></div>
+      <div className="w-ful p-1 h-screen"></div>
     </div>
   );
 }
