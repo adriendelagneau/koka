@@ -57,7 +57,7 @@
 
  .underline-effect::after {
    content: '';
-   @apply absolute h-[2px] w-0 bottom-0 left-0 bg-primary transition-all;
+   @apply absolute h-[2px] w-0 bottom-0 left-0 bg-secondary transition-all;
  }
 
  .underline-effect:hover::after {

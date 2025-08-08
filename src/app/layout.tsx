@@ -3,6 +3,7 @@ import "./globals.css";
 import localFont from "next/font/local";
 
 import { BubblesCanvas } from "@/components/bubbles/bubblesCanvas";
+import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { BackgroundCanvas } from "@/components/shader-background/BackgroundCanvas";
 
@@ -36,6 +37,7 @@ export default function RootLayout({
 
         <Header />
         <main className="bg-primary">{children}</main>
+        <Footer />
       </body>
     </html>
   );
