@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
 
+import { BubblesCanvas } from "@/components/bubbles/bubblesCanvas";
+import Header from "@/components/Header";
 import { BackgroundCanvas } from "@/components/shader-background/BackgroundCanvas";
 
 const creamCake = localFont({
@@ -30,7 +32,9 @@ export default function RootLayout({
         className={`${poppins.variable} ${creamCake.variable} scrollbar scrollbar-none overflow-x-hidden antialiased`}
       >
         <BackgroundCanvas />
+        <BubblesCanvas />
 
+        <Header />
         <main className="bg-primary">{children}</main>
       </body>
     </html>
