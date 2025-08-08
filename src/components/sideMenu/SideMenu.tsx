@@ -1,10 +1,11 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import Link from "next/link";
-import { useMenuStore } from "@/lib/store/useZuStore";
+import { useEffect, useRef } from "react";
+
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useMenuStore } from "@/lib/store/useZuStore";
 
 const SideMenu = () => {
   const isMenuOpen = useMenuStore((state) => state.isMenuOpen);
@@ -13,7 +14,7 @@ const SideMenu = () => {
   const enterTimeline = useRef<GSAPTimeline | null>(null);
   const leaveTimeline = useRef<GSAPTimeline | null>(null);
   const isInitialRender = useRef(true);
-    const isMobile = useIsMobile();
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     if (!menuRef.current) return;
@@ -21,7 +22,6 @@ const SideMenu = () => {
     const menu = menuRef.current;
     gsap.set(menu, { x: "-100%" });
     gsap.set(menu, { x: "-100%" });
-
 
     enterTimeline.current = gsap
       .timeline({
@@ -84,21 +84,21 @@ const SideMenu = () => {
   };
 
   useEffect(() => {
-  if (!isMobile && isMenuOpen) {
-    closeMenu();
-  }
-}, [isMobile, isMenuOpen, closeMenu]);
+    if (!isMobile && isMenuOpen) {
+      closeMenu();
+    }
+  }, [isMobile, isMenuOpen, closeMenu]);
 
   return (
     <div
       ref={menuRef}
-      className="bg-secondary font-poppins fixed top-20 left-0 z-50 flex h-[calc(100vh-5rem)] w-full transform items-center justify-center translate-x-full"
+      className="bg-secondary font-poppins fixed top-20 left-0 z-50 flex h-[calc(100vh-5rem)] w-full translate-x-full transform items-center justify-center"
       role="dialog"
       aria-hidden={!isMenuOpen}
     >
-      <ul className=" flex flex-col h-full items-center justify-center gap-6 text-5xl uppercase text-primary">
+      <ul className="text-primary flex h-full flex-col items-center justify-center gap-6 text-5xl uppercase">
         {menuItems.map((item) => (
-          <li key={item.label} className="overflow-hidden translate-y-full ">
+          <li key={item.label} className="translate-y-full overflow-hidden">
             <Link href={item.href} onClick={handleClose}>
               {item.label}
             </Link>
