@@ -11,6 +11,7 @@ const SideMenu = () => {
   const isMenuOpen = useMenuStore((state) => state.isMenuOpen);
   const closeMenu = useMenuStore((state) => state.closeMenu);
   const menuRef = useRef<HTMLDivElement>(null);
+  const listRefs = useRef<HTMLLIElement[]>([]);
   const enterTimeline = useRef<GSAPTimeline | null>(null);
   const leaveTimeline = useRef<GSAPTimeline | null>(null);
   const isInitialRender = useRef(true);
@@ -21,8 +22,9 @@ const SideMenu = () => {
 
     const menu = menuRef.current;
     gsap.set(menu, { x: "-100%" });
-    gsap.set(menu, { x: "-100%" });
+    gsap.set(listRefs.current, { y: "100%" }); // start text off-screen
 
+    // OPEN animation: slide menu in → text slides up staggered
     enterTimeline.current = gsap
       .timeline({
         paused: true,
@@ -30,12 +32,23 @@ const SideMenu = () => {
           document.body.style.overflowY = "hidden";
         },
       })
-
       .to(menu, {
         x: 0,
         duration: 0.5,
-      });
+        ease: "power3.out",
+      })
+      .to(
+        listRefs.current,
+        {
+          y: 0,
+          ease: "power3.out",
+          stagger: 0.13,
+          duration: 0.5,
+        },
+        "-=0.2" // overlap slightly with menu slide
+      );
 
+    // CLOSE animation: text slides down → menu slides out
     leaveTimeline.current = gsap
       .timeline({
         paused: true,
@@ -43,10 +56,16 @@ const SideMenu = () => {
           document.body.style.overflowY = "auto";
         },
       })
-
+      .to(listRefs.current, {
+        y: "100%",
+        ease: "power3.in",
+        stagger: 0.1,
+        duration: 0.3,
+      })
       .to(menu, {
         x: "-100%",
-        duration: 0.5,
+        duration: 0.4,
+        ease: "power3.inOut",
       });
 
     return () => {
@@ -62,7 +81,6 @@ const SideMenu = () => {
       isInitialRender.current = false;
       return;
     }
-
     if (isMenuOpen) {
       enterTimeline.current?.play(0);
     } else {
@@ -97,12 +115,19 @@ const SideMenu = () => {
       aria-hidden={!isMenuOpen}
     >
       <ul className="text-primary flex h-full flex-col items-center justify-center gap-6 text-5xl uppercase">
-        {menuItems.map((item) => (
-          <li key={item.label} className="translate-y-full overflow-hidden">
-            <Link href={item.href} onClick={handleClose}>
-              {item.label}
-            </Link>
-          </li>
+        {menuItems.map((item, i) => (
+          <div key={item.label} className="overflow-hidden">
+            <li
+              ref={(el) => {
+                if (el) listRefs.current[i] = el;
+              }}
+              className="translate-y-full"
+            >
+              <Link href={item.href} onClick={handleClose}>
+                {item.label}
+              </Link>
+            </li>
+          </div>
         ))}
       </ul>
     </div>
