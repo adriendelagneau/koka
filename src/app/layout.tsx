@@ -5,6 +5,7 @@ import localFont from "next/font/local";
 import { BubblesCanvas } from "@/components/bubbles/bubblesCanvas";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import { SmoothScrollProvider } from "@/components/providers/SmoothScrollProvider";
 import { BackgroundCanvas } from "@/components/shader-background/BackgroundCanvas";
 import SideMenu from "@/components/sideMenu/SideMenu";
 import ViewCanvas from "@/components/ViewCanvas";
@@ -39,7 +40,9 @@ export default function RootLayout({
         <ViewCanvas />
         <Header />
         <SideMenu />
-        <main className="bg-primary">{children}</main>
+        <SmoothScrollProvider>
+          <main className="bg-primary">{children}</main>
+        </SmoothScrollProvider>
         <Footer />
       </body>
     </html>
