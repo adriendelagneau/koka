@@ -6,6 +6,7 @@ import { BubblesCanvas } from "@/components/bubbles/bubblesCanvas";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { BackgroundCanvas } from "@/components/shader-background/BackgroundCanvas";
+import SideMenu from "@/components/sideMenu/SideMenu";
 
 const creamCake = localFont({
   variable: "--font-cream-cake",
@@ -36,6 +37,7 @@ export default function RootLayout({
         <BubblesCanvas />
 
         <Header />
+        <SideMenu />
         <main className="bg-primary">{children}</main>
         <Footer />
       </body>
