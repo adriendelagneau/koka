@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import localFont from "next/font/local";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+import { BackgroundCanvas } from "@/components/shader-background/BackgroundCanvas";
+
+const creamCake = localFont({
+  variable: "--font-cream-cake",
+  src: "../../public/font/Cream Cake.otf",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const poppins = localFont({
+  variable: "--font-poppins",
+  src: "../../public/font/poppins-extrabold.ttf",
 });
 
 export const metadata: Metadata = {
@@ -25,9 +27,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${poppins.variable} ${creamCake.variable} scrollbar scrollbar-none overflow-x-hidden antialiased`}
       >
-        {children}
+        <BackgroundCanvas />
+
+        <main className="bg-primary">{children}</main>
       </body>
     </html>
   );
