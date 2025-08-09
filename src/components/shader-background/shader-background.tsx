@@ -4,8 +4,8 @@ import { useFrame, useThree } from "@react-three/fiber";
 import { useMemo, useRef } from "react";
 import * as THREE from "three";
 
-import fragmentShader from "@/app/shaders/fragment/fragmentBackground.glsl";
-import vertexShader from "@/app/shaders/vertex/vertexBackground.glsl";
+import fragmentShader from "@/shaders/fragment/fragmentBackground.glsl";
+import vertexShader from "@/shaders/vertex/vertexBackground.glsl";
 
 export const ShaderBackground = () =>  {
   const { size, viewport } = useThree();

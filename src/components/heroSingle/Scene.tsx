@@ -1,11 +1,12 @@
 "use client";
 
-import FloatingCan from "@/components/FloatingCan";
 import { useGSAP } from "@gsap/react";
 import { Environment } from "@react-three/drei";
 import gsap from "gsap";
 import React, { useRef } from "react";
 import { Group } from "three";
+
+import FloatingCan from "@/components/FloatingCan";
 
 type SceneProps = {
   flavor: "original" | "cherry" | "zero"; // Restrict flavor to these specific strings
