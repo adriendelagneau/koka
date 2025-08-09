@@ -13,7 +13,7 @@ const Page = async ({ params }: PageProps) => {
   return (
     <div className="relative min-h-[300vh] pt-24">
       <HeroSingle />
-      <h3 className="text-primary font-poppins w-full text-center text-6xl uppercase">
+      <h3 className="text-secondary font-poppins w-full text-center text-6xl uppercase">
         choose your favorite one
       </h3>
       <Carousel />

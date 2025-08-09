@@ -83,7 +83,7 @@ const Carousel = () => {
   return (
     <div
       ref={containerRef}
-      className="carousel relative z-40 flex w-full touch-pan-y items-center justify-center overflow-hidden py-12"
+      className="carousel relative z-40 flex w-full touch-pan-y items-center justify-center overflow-hidden"
     >
       {/* Arrow Buttons (Desktop only) */}
       <div className="hidden lg:block">

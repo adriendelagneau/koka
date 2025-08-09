@@ -27,7 +27,7 @@ const ProductTitle = ({ name = "original" }: { name?: string }) => {
         ease: "back.out(2)",
         scrollTrigger: {
           trigger: titleContainerRef.current,
-          start: "top 17%",
+          start: "top 19%",
           end: "bottom 99%",
           toggleActions: "play none none reverse",
           markers: true
@@ -42,10 +42,10 @@ const ProductTitle = ({ name = "original" }: { name?: string }) => {
       className="absolute  z-0 top-24 left-0 h-screen w-full"
       id="singleTtitle"
     >
-      <div ref={subRef} className="relative">
+      <div ref={subRef} className="relative text-5xl tracking-wider">
         <div
           className={
-            "text-secondary font-poppins absolute top-0 left-1/2 z-10 -translate-x-1/2 text-9xl uppercase opacity-100"
+            "text-secondary text-stroke-secondary-1 font-poppins absolute top-0 left-1/2 z-10 -translate-x-1/2  uppercase opacity-100"
           }
         >
           {name}
@@ -53,7 +53,7 @@ const ProductTitle = ({ name = "original" }: { name?: string }) => {
         <div
           ref={ref1}
           className={
-            "text-stroke text-stroke-secondary text-primary font-poppins absolute top-0 left-1/2 -translate-x-1/2 text-9xl uppercase opacity-70"
+            "text-stroke-secondary-1 text-primary font-poppins absolute top-0 left-1/2 -translate-x-1/2  uppercase opacity-70"
           }
         >
           {name}
@@ -61,7 +61,7 @@ const ProductTitle = ({ name = "original" }: { name?: string }) => {
         <div
           ref={ref2}
           className={
-            "text-stroke text-stroke-secondary text-primary font-poppins absolute top-0 left-1/2 -translate-x-1/2 text-9xl uppercase opacity-50"
+            "text-stroke-secondary-1 text-primary font-poppins absolute top-0 left-1/2 -translate-x-1/2  uppercase opacity-50"
           }
         >
           {name}
@@ -69,7 +69,7 @@ const ProductTitle = ({ name = "original" }: { name?: string }) => {
         <div
           ref={ref3}
           className={
-            "text-stroke text-stroke-secondary text-primary font-poppins absolute top-0 left-1/2 -translate-x-1/2 text-9xl uppercase opacity-30"
+            "text-stroke-secondary-1 text-primary font-poppins absolute top-0 left-1/2 -translate-x-1/2  uppercase opacity-30"
           }
         >
           {name}
@@ -77,7 +77,7 @@ const ProductTitle = ({ name = "original" }: { name?: string }) => {
         <div
           ref={ref4}
           className={
-            "text-stroke text-stroke-secondary text-primary font-poppins absolute top-0 left-1/2 -translate-x-1/2 text-9xl uppercase opacity-10"
+            "text-stroke-secondary-1 text-primary font-poppins absolute top-0 left-1/2 -translate-x-1/2  uppercase opacity-10"
           }
         >
           {name}
@@ -85,7 +85,7 @@ const ProductTitle = ({ name = "original" }: { name?: string }) => {
         <div
           ref={ref5}
           className={
-            "text-stroke text-stroke-secondary text-primary font-poppins absolute top-0 left-1/2 -translate-x-1/2 text-9xl uppercase opacity-5"
+            "text-stroke-secondary-1 text-primary font-poppins absolute top-0 left-1/2 -translate-x-1/2  uppercase opacity-5"
           }
         >
           {name}

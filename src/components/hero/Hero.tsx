@@ -59,7 +59,7 @@ const Hero = () => {
         <Scene />
       </View>
 
-      <div className="hero">
+      <div className="hero tracking-wider">
         <div
           ref={landingRef}
           id="landing"
