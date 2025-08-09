@@ -27,7 +27,7 @@ const ProductTitle = ({ name = "original" }: { name?: string }) => {
         ease: "back.out(2)",
         scrollTrigger: {
           trigger: titleContainerRef.current,
-          start: "top top",
+          start: "top center",
           end: "bottom 99%",
         },
       });
