@@ -32,7 +32,7 @@ const ViewCanvas = () => {
         zIndex,
       }}
       dpr={[1, 1.5]}
-      gl={{ antialias: true, alpha: true }}
+      // gl={{ antialias: true }}
       camera={{ fov: 30 }}
     >
       <Suspense fallback={null}>
