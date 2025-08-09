@@ -27,10 +27,10 @@ const ProductTitle = ({ name = "original" }: { name?: string }) => {
         ease: "back.out(2)",
         scrollTrigger: {
           trigger: titleContainerRef.current,
-          start: "top 5%",
+          start: "top top",
           end: "bottom 99%",
-          toggleActions: "play none none reverse"
-
+          toggleActions: "play none none reverse",
+          markers: true
         },
       });
     });
