@@ -7,11 +7,12 @@ import React, { useRef } from "react";
 
 import { useBubbleStore, useMeshStore } from "@/lib/store/useZuStore";
 
+import PinnedReveal from "./pin-reveal";
 import Scene from "./Scene";
 
 const Hero = () => {
   const ready = useMeshStore((state) => state.ready);
-   const togglePlay = useBubbleStore((state) => state.togglePlay);
+  const togglePlay = useBubbleStore((state) => state.togglePlay);
 
   const titleRef = useRef(null);
   const title2Ref = useRef(null);
@@ -27,9 +28,7 @@ const Hero = () => {
     () => {
       if (!ready) return;
 
-      gsap.timeline(
-        {onComplete:() => togglePlay()}
-      ).to(
+      gsap.timeline({ onComplete: () => togglePlay() }).to(
         [
           titleRef.current,
           title2Ref.current,
@@ -114,10 +113,8 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        <div className="font-poppins text-secondary flex min-h-screen w-[55%] items-center justify-center p-24 text-7xl leading-23">
-          Lorem ipsum adipisicing elit. Officiis illo quasi, quibusdam nihil
-          impedit ad a!
-        </div>
+        {/* Replace Lorem Ipsum with PinnedReveal */}
+        <PinnedReveal text="This is the new pinned reveal text replacing the lorem ipsum." />
       </div>
     </div>
   );

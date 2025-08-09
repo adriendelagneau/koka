@@ -45,7 +45,6 @@ export default function Home() {
         speed={1.1}
         sentence="The beautiful landscape stretched out before us, filled with rolling hills, lush trees, and vibrant wildflowers swaying in the gentle breeze under a clear blue sky."
       />
-      <Carousel />
       <div className="w-full h-screen"></div>
       <Social />
     </div>

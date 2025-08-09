@@ -11,9 +11,9 @@ const Page = async ({ params }: PageProps) => {
   const slug = await params;
   console.log(slug);
   return (
-    <div className="relative min-h-[300vh] pt-24">
+    <div className="relative pt-24">
       <HeroSingle />
-      <h3 className="text-secondary font-poppins w-full text-center text-6xl uppercase">
+      <h3 className="text-secondary font-poppins w-full text-center text-4xl uppercase">
         choose your favorite one
       </h3>
       <Carousel />

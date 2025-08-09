@@ -14,7 +14,7 @@ const splitLetters = (word, refs) => {
 
 export const splitWords = (phrase, refs) => {
   return phrase.split(" ").map((word, i) => (
-    <p key={i} className="inline-block ">
+    <p key={i} className="inline-block   mr-[0.25em]">
       {splitLetters(word, refs)}
     </p>
   ));
